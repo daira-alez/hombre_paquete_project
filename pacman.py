@@ -136,11 +136,12 @@ def move():
         if valid(point + course):
             point.move(course)
         else:
+#change the vector to make ghost faster
             options = [
-                vector(5, 0),
-                vector(-5, 0),
-                vector(0, 5),
-                vector(0, -5),
+                vector(8, 0),
+                vector(-8, 0),
+                vector(0, 8),
+                vector(0, -8),
             ]
             #Conditional to decide if the ghost is even, the ghost is intelligent else is random
             if i%2 == 0:
