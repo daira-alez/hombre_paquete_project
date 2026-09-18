@@ -105,8 +105,8 @@ def world():
             if tile == 1:
                 path.up()
                 path.goto(x + 10, y + 10)
-                path.dot(2, 'white')
-
+                path.dot(2, 'green')
+#Change dot color from white to green
 
 def move():
     """Move pacman and all ghosts."""
