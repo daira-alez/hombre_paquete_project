@@ -129,8 +129,9 @@ def move():
     up()
     goto(pacman.x + 10, pacman.y + 10)
     dot(20, 'yellow')
-
-    for point, course in ghosts:
+    
+    #Ghosts movement
+    for i, (point, course) in enumerate(ghosts):
         if valid(point + course):
             point.move(course)
         else:
@@ -140,7 +141,12 @@ def move():
                 vector(0, 5),
                 vector(0, -5),
             ]
-            plan = choice(options)
+            #Conditional to decide if the ghost is even, the ghost is intelligent else is random
+            if i%2 == 0:
+                 #Chose the movement that pulls closer to the pacman
+                 plan = min(options, key=lambda v: abs((point+v)-pacman))
+            else:
+                 plan = choice(options)
             course.x = plan.x
             course.y = plan.y
 
