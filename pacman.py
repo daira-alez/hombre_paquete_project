@@ -92,8 +92,8 @@ def valid(point):
 def world():
     """Draw world using path."""
     bgcolor('black')
-    path.color('blue')
-
+    path.color('gray')
+#Change borad color from blue to gray
     for index in range(len(tiles)):
         tile = tiles[index]
 
